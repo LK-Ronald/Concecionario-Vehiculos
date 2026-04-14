@@ -1,4 +1,4 @@
-package com.concesionario.app;
+package com.concesionario;
 
 public class Main {
     public static void main(String[] args) {

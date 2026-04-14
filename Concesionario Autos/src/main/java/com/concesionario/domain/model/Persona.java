@@ -1,76 +1,22 @@
 package com.concesionario.domain.model;
 
 import com.concesionario.domain.enums.PersonaRol;
+import lombok.Value;
+
 import java.util.Date;
 
+@Value
 public class Persona {
 
-    private String dni;
-    private String nombre;
-    private String apellido;
-    private String telefono;
-    private String direccion;
-    private String correo;
-    private String contrasena;
-    private Date fecha_nacimiento;
-    private PersonaRol rol;
+    String dni;
+    String nombre;
+    String apellido;
+    String telefono;
+    String direccion;
+    String correo;
+    String contrasena;
+    Date fecha_nacimiento;
+    PersonaRol rol;
 
-    public Persona() {}
-
-    public Persona(
-            final String DNI, final String nombre, final String apellido, final String telefono, final String direccion,
-            final String correo, final String contrasena, final Date fecha_nacimiento, final PersonaRol rol)
-    {
-        this.dni = DNI;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.telefono = telefono;
-        this.direccion = direccion;
-        this.correo = correo;
-        this.contrasena = contrasena;
-        this.fecha_nacimiento = fecha_nacimiento;
-        this.rol = rol;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getDni() {
-        return dni;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-
-    public String getCorreo() {
-        return correo;
-    }
-
-    public PersonaRol getRol() {
-        return rol;
-    }
-
-
-    public String getContrasena() {
-        return contrasena;
-    }
-
-
-    public Date getFecha_nacimiento() {
-        return fecha_nacimiento;
-    }
 
 }
