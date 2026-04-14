@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class Persona {
 
-    private String DNI;
+    private String dni;
     private String nombre;
     private String apellido;
     private String telefono;
@@ -21,7 +21,7 @@ public class Persona {
             final String DNI, final String nombre, final String apellido, final String telefono, final String direccion,
             final String correo, final String contrasena, final Date fecha_nacimiento, final PersonaRol rol)
     {
-        this.DNI = DNI;
+        this.dni = DNI;
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
@@ -36,8 +36,8 @@ public class Persona {
         return nombre;
     }
 
-    public String getDNI() {
-        return DNI;
+    public String getDni() {
+        return dni;
     }
 
     public String getApellido() {
