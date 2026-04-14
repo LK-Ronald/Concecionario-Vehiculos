@@ -17,6 +17,6 @@ public class PersonaDeletedDomainEvent extends DomainEvent{
 
     @Override
     public Map<String, String> payload() {
-        return Map.of("id", persona.getDni());
+        return Map.of("dni", persona.getDni());
     }
 }

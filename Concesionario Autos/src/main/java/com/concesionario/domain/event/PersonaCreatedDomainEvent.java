@@ -1,7 +1,9 @@
 package com.concesionario.domain.event;
 
+import com.concesionario.domain.enums.PersonaRol;
 import com.concesionario.domain.model.Persona;
 
+import java.util.Date;
 import java.util.Map;
 
 public class PersonaCreatedDomainEvent extends DomainEvent {
@@ -19,8 +21,13 @@ public class PersonaCreatedDomainEvent extends DomainEvent {
     public Map<String, String> payload() {
         return Map.of(
                 "dni", persona.getDni(),
-                "name", persona.getNombre(),
-                "email", persona.getCorreo(),
-                "role", persona.getRol().name());
+                "nombre", persona.getNombre(),
+                "apellido", persona.getApellido(),
+                "telefono", persona.getTelefono(),
+                "direccion", persona.getDireccion(),
+                "correo", persona.getCorreo(),
+                "contrasena", persona.getContrasena(),
+                "fechaNacimiento", persona.getFechaNacimiento().toString(),
+                "rol", persona.getRol().name() );
     }
 }

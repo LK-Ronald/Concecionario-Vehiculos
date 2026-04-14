@@ -3,7 +3,7 @@ package com.concesionario.domain.model;
 import com.concesionario.domain.enums.PersonaRol;
 import lombok.Value;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Value
 public class Persona {
@@ -15,7 +15,7 @@ public class Persona {
     String direccion;
     String correo;
     String contrasena;
-    Date fecha_nacimiento;
+    LocalDate fechaNacimiento;
     PersonaRol rol;
 
 
