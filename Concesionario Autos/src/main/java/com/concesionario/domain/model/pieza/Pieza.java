@@ -1,4 +1,4 @@
-package com.concesionario.domain.model;
+package com.concesionario.domain.model.pieza;
 
 import com.concesionario.domain.enums.PiezaTipo;
 import lombok.Value;

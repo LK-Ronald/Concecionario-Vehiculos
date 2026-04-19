@@ -1,4 +1,4 @@
-package com.concesionario.domain.model;
+package com.concesionario.domain.model.vehiculo;
 
 import com.concesionario.domain.enums.VehiculoEstado;
 import lombok.Value;

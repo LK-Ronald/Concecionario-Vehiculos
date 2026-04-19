@@ -2,7 +2,7 @@ package com.concesionario.domain.excepcion;
 
 public class DomainExcepcion extends RuntimeException {
 
-    public DomainExcepcion(final String mensaje){
+    protected DomainExcepcion(final String mensaje){
         super(mensaje);
     }
 

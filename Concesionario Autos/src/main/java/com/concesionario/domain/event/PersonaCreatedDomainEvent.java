@@ -1,9 +1,7 @@
 package com.concesionario.domain.event;
 
-import com.concesionario.domain.enums.PersonaRol;
-import com.concesionario.domain.model.Persona;
+import com.concesionario.domain.model.persona.Persona;
 
-import java.util.Date;
 import java.util.Map;
 
 public class PersonaCreatedDomainEvent extends DomainEvent {
