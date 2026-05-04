@@ -39,4 +39,8 @@ public class Persona {
         return new Persona(dni, nombre, apellido, telefono, direccion, correo, contrasena, fechaNacimiento, rol, PersonaEstatus.INACTIVO);
     }
 
+    public Persona block(){
+        return new Persona(dni, nombre, apellido, telefono, direccion, correo, contrasena, fechaNacimiento, rol, PersonaEstatus.BLOQUEADO);
+    }
+
 }
