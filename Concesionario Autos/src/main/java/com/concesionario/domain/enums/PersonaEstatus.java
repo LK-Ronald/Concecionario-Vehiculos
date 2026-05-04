@@ -1,5 +1,6 @@
 package com.concesionario.domain.enums;
 
+import com.concesionario.domain.excepcion.InvalidPersonaEstatusException;
 import com.concesionario.domain.excepcion.InvalidPersonaRolException;
 
 public enum PersonaEstatus {
@@ -17,7 +18,7 @@ public enum PersonaEstatus {
             }
         }
 
-        throw InvalidPersonaRolException.becauseValueIsInvalid(value);
+        throw InvalidPersonaEstatusException.becauseValueIsInvalid(value);
     }
 
 }
