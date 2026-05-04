@@ -17,6 +17,6 @@ public class PersonaUpdateDomainEvent extends DomainEvent {
 
     @Override
     public Map<String, String> payload() {
-        return Map.of("dni", persona.getDni());
+        return Map.of("dni", persona.getDni().value());
     }
 }

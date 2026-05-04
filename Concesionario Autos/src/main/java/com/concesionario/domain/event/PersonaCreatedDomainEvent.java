@@ -1,6 +1,7 @@
 package com.concesionario.domain.event;
 
 import com.concesionario.domain.model.persona.Persona;
+import com.concesionario.domain.model.persona.valueobject.*;
 
 import java.util.Map;
 
@@ -18,14 +19,15 @@ public class PersonaCreatedDomainEvent extends DomainEvent {
     @Override
     public Map<String, String> payload() {
         return Map.of(
-                "dni", persona.getDni(),
-                "nombre", persona.getNombre(),
-                "apellido", persona.getApellido(),
-                "telefono", persona.getTelefono(),
-                "direccion", persona.getDireccion(),
-                "correo", persona.getCorreo(),
-                "contrasena", persona.getContrasena(),
-                "fechaNacimiento", persona.getFechaNacimiento().toString(),
-                "rol", persona.getRol().name() );
+                "dni", persona.getDni().value(),
+                "nombre", persona.getNombre().value(),
+                "apellido", persona.getApellido().value(),
+                "telefono", persona.getTelefono().value(),
+                "direccion", persona.getDireccion().value(),
+                "correo", persona.getCorreo().value(),
+                "fechaNacimiento", persona.getFechaNacimiento().value().toString(),
+                "rol", persona.getRol().name(),
+                "estatus", persona.getEstatus().name()
+        );
     }
 }

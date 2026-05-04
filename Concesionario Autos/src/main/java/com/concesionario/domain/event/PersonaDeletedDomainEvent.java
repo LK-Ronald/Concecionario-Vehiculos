@@ -4,7 +4,7 @@ import com.concesionario.domain.model.persona.Persona;
 
 import java.util.Map;
 
-public class PersonaDeletedDomainEvent extends DomainEvent{
+public class PersonaDeletedDomainEvent extends DomainEvent {
 
     private static final String EVENT_NAME = "user.deleted";
 
@@ -17,6 +17,6 @@ public class PersonaDeletedDomainEvent extends DomainEvent{
 
     @Override
     public Map<String, String> payload() {
-        return Map.of("dni", persona.getDni());
+        return Map.of("dni", persona.getDni().value());
     }
 }
