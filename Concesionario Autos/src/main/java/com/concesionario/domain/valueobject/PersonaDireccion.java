@@ -1,8 +1,8 @@
-package com.concesionario.domain.model.persona.valueobject;
+package com.concesionario.domain.valueobject;
 
-import com.concesionario.domain.model.persona.valueobject.direccion.Calle;
-import com.concesionario.domain.model.persona.valueobject.direccion.Ciudad;
-import com.concesionario.domain.model.persona.valueobject.direccion.CodigoPostal;
+import com.concesionario.domain.valueobject.direccion.Calle;
+import com.concesionario.domain.valueobject.direccion.Ciudad;
+import com.concesionario.domain.valueobject.direccion.CodigoPostal;
 
 import java.util.Objects;
 

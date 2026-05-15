@@ -1,4 +1,4 @@
-package com.concesionario.domain.model.persona.valueobject;
+package com.concesionario.domain.valueobject;
 
 import java.util.Objects;
 import java.util.regex.Pattern;

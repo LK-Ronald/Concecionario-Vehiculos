@@ -1,8 +1,8 @@
-package com.concesionario.domain.model.persona;
+package com.concesionario.domain.model;
 
 import com.concesionario.domain.enums.PersonaEstatus;
 import com.concesionario.domain.enums.PersonaRol;
-import com.concesionario.domain.model.persona.valueobject.*;
+import com.concesionario.domain.valueobject.*;
 import lombok.Value;
 
 @Value

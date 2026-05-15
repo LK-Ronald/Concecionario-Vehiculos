@@ -1,7 +1,6 @@
 package com.concesionario.domain.event;
 
-import com.concesionario.domain.model.persona.Persona;
-import com.concesionario.domain.model.persona.valueobject.*;
+import com.concesionario.domain.model.Persona;
 
 import java.util.Map;
 

@@ -1,4 +1,4 @@
-package com.concesionario.domain.model.persona.valueobject.direccion;
+package com.concesionario.domain.valueobject.direccion;
 
 import com.concesionario.domain.excepcion.direccion.InvalidCalleException;
 import com.concesionario.domain.excepcion.direccion.InvalidCodigoPostalException;
