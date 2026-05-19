@@ -1,0 +1,134 @@
+@startuml
+
+package "com.concesionario.domain" {
+
+    package "model" {
+        class Persona << Entity >> {
+            - dni: PersonaDni
+            - nombre: PersonaNombre
+            - apellido: PersonaNombre
+            - telefono: PersonaTelefono
+            - direccion: PersonaDireccion
+            - correo: PersonaCorreo
+            - contrasena: PersonaPassword
+            - fechaNacimiento: PersonaFechaNacimiento
+            - rol: PersonaRol
+            - estatus: PersonaEstatus
+            + {static} createPersona() : Persona
+            + activate() : Persona
+            + deactivate() : Persona
+            + block() : Persona
+        }
+    }
+
+    package "valueobject" {
+
+        record PersonaDni << ValueObject >> {
+            - value: String
+        }
+        record PersonaNombre << ValueObject >> {
+            - value: String
+        }
+        record PersonaTelefono << ValueObject >> {
+            - value: String
+        }
+        record PersonaCorreo << ValueObject >> {
+            - value: String
+        }
+        class PersonaPassword << ValueObject >> {
+            - value: String
+            + {static} fromPlainText(plainText: String) : PersonaPassword
+            + {static} fromHash(hash: String) : PersonaPassword
+            + verifyPlain(plainText: String) : boolean
+        }
+        record PersonaFechaNacimiento << ValueObject >> {
+            - value: LocalDate
+            + getAge() : int
+            + validateIsAdult() : boolean
+        }
+        record PersonaDireccion << ValueObject >> {
+            - calle: Calle
+            - ciudad: Ciudad
+            - codigoPostal: CodigoPostal
+            + value() : String
+        }
+
+        package "direccion" {
+            record Calle << ValueObject >> {
+                - value: String
+            }
+            record Ciudad << ValueObject >> {
+                - value: String
+            }
+            record CodigoPostal << ValueObject >> {
+                - value: String
+            }
+        }
+    }
+
+    package "enums" {
+        enum PersonaRol {
+            CLIENTE
+            ADMIN
+            VENDEDOR
+            MECANICO
+            ADMINISTRADOR
+            DUENO_NEGOCIO
+            JEFE_ALMACEN
+        }
+        enum PersonaEstatus {
+            ACTIVO
+            INACTIVO
+            PENDIENTE
+            BLOQUEADO
+        }
+    }
+
+    package "event" {
+        abstract class DomainEvent {
+            - eventName: String
+            - occurredOn: LocalDateTime
+            + {abstract} payload() : Map<String, String>
+        }
+
+        class PersonaCreatedDomainEvent {
+            - persona: Persona
+        }
+
+        class PersonaDeletedDomainEvent {
+            - persona: Persona
+        }
+
+        class PersonaUpdateDomainEvent {
+            - persona: Persona
+        }
+    }
+}
+
+'' Relaciones de Persona con Value Objects y Enums
+Persona *-- PersonaDni
+Persona *-- PersonaNombre : nombre
+Persona *-- PersonaNombre : apellido
+Persona *-- PersonaTelefono
+Persona *-- PersonaDireccion
+Persona *-- PersonaCorreo
+Persona *-- PersonaPassword
+Persona *-- PersonaFechaNacimiento
+Persona *-- PersonaRol
+Persona *-- PersonaEstatus
+
+'' Relaciones de PersonaDireccion
+PersonaDireccion *-- Calle
+PersonaDireccion *-- Ciudad
+PersonaDireccion *-- CodigoPostal
+
+'' Relaciones de Eventos
+DomainEvent <|-- PersonaCreatedDomainEvent
+DomainEvent <|-- PersonaDeletedDomainEvent
+DomainEvent <|-- PersonaUpdateDomainEvent
+
+PersonaCreatedDomainEvent o-- Persona
+PersonaDeletedDomainEvent o-- Persona
+PersonaUpdateDomainEvent o-- Persona
+
+@enduml
