@@ -1,6 +1,6 @@
 package com.concesionario.domain.enums;
 
-import com.concesionario.domain.excepcion.InvalidPersonaEstatusException;
+import com.concesionario.domain.excepcion.InvalidPersonaRolException;
 
 public enum PersonaRol {
     CLIENTE,
@@ -19,7 +19,7 @@ public enum PersonaRol {
             }
         }
 
-        throw InvalidPersonaEstatusException.becauseValueIsInvalid(value);
+        throw InvalidPersonaRolException.becauseValueIsInvalid(value);
     }
 
 }
