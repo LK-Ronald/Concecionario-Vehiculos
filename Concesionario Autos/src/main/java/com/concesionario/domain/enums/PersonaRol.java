@@ -11,11 +11,11 @@ public enum PersonaRol {
     DUENO_NEGOCIO,
     JEFE_ALMACEN;
 
-    public static PersonaEstatus fromString(final String value) {
+    public static PersonaRol fromString(final String value) {
 
-        for (final PersonaEstatus estatus : PersonaEstatus.values()) {
-            if (estatus.name().equalsIgnoreCase(value)) {
-                return estatus;
+        for (final PersonaRol rol : PersonaRol.values()) {
+            if (rol.name().equalsIgnoreCase(value)) {
+                return rol;
             }
         }
 
